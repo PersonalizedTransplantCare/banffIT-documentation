@@ -20,7 +20,7 @@ banff_launcher() to run additional tests."><!-- mathjax --><script src="https://
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">banffIT</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0.1003</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0.1004</span>
       </span>
     </div>
 
@@ -42,7 +42,7 @@ banff_launcher() to run additional tests."><!-- mathjax --><script src="https://
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
-  <a href="https://github.com/maelstrom-research/banffIT/" class="external-link">
+  <a href="https://github.com/PersonalizedTransplantCare/banffIT/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -57,7 +57,7 @@ banff_launcher() to run additional tests."><!-- mathjax --><script src="https://
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Add diagnosis to a banff dataset</h1>
-    <small class="dont-index">Source: <a href="https://github.com/maelstrom-research/banffIT/blob/HEAD/R/02_algorithm.R" class="external-link"><code>R/02_algorithm.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/PersonalizedTransplantCare/banffIT/blob/HEAD/R/02_algorithm.R" class="external-link"><code>R/02_algorithm.R</code></a></small>
     <div class="hidden name"><code>add_diagnosis.Rd</code></div>
     </div>
 
@@ -69,17 +69,13 @@ that <code><a href="banff_launcher.html">banff_launcher()</a></code> would have 
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">add_diagnosis</span><span class="op">(</span><span class="va">banff_dataset</span>, .test_TA <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">add_diagnosis</span><span class="op">(</span><span class="va">banff_dataset</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>banff_dataset</dt>
 <dd><p>A tibble object.</p></dd>
-
-
-<dt>.test_TA</dt>
-<dd><p>Temporary parameter to test with 'ta' variable.</p></dd>
 
 </dl></div>
     <div id="value">
@@ -95,18 +91,21 @@ that <code><a href="banff_launcher.html">banff_launcher()</a></code> would have 
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/GuiFabre/fabR" class="external-link">fabR</a></span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">banff_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"example.xlsx"</span>, package <span class="op">=</span> <span class="st">"banffIT"</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">banff_dataset</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/fabR/man/read_excel_allsheets.html" class="external-link">read_excel_allsheets</a></span><span class="op">(</span><span class="va">banff_file</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">banff_dataset</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/fabR/man/read_excel_allsheets.html" class="external-link">read_excel_allsheets</a></span><span class="op">(</span><span class="va">banff_file</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span>,<span class="op">]</span></span></span>
 <span class="r-in"><span><span class="fu">add_diagnosis</span><span class="op">(</span><span class="va">banff_dataset</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 158</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 158 variables: patient_id &lt;lgl&gt;, date_tx &lt;lgl&gt;, Sex &lt;lgl&gt;, Age_tx &lt;lgl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   Ethnicity &lt;lgl&gt;, Cause.of.ESKD &lt;lgl&gt;, First.Dialysis.Date &lt;lgl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   Dialysis.Modality &lt;lgl&gt;, Cold.Ischemia.Time &lt;lgl&gt;, sc_recip_dna &lt;lgl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   sc_don_dna &lt;lgl&gt;, Donor_origin &lt;lgl&gt;, Donor_ID &lt;lgl&gt;, don_type &lt;lgl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   Donor.Age &lt;lgl&gt;, Donor.Sex &lt;lgl&gt;, biopsy_id &lt;lgl&gt;, sc_date_bx &lt;lgl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   type_bx &lt;lgl&gt;, adequacy &lt;lgl&gt;, TCMR.patho &lt;lgl&gt;, ABMR.patho &lt;lgl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   Fixation &lt;lgl&gt;, microscopy &lt;lgl&gt;, Grade &lt;lgl&gt;, c4d_if &lt;lgl&gt;, …</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 119</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   patient_id centre    biopsy_id sc_date_bx          date_tx             type_bx</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>        100 centre_t…         1 2018-12-07 <span style="color: #949494;">00:00:00</span> 2018-01-31 <span style="color: #949494;">00:00:00</span>       2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 113 more variables: adequacy &lt;dbl&gt;, fixation_ff &lt;dbl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   fixation_paraffin &lt;dbl&gt;, fixation_elec &lt;dbl&gt;, fixation_rna &lt;dbl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   microscopy &lt;dbl&gt;, c4d_if &lt;dbl&gt;, c4d_ihc &lt;dbl&gt;, dsa &lt;dbl&gt;, hist_dsa &lt;dbl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   i_score &lt;dbl&gt;, t_score &lt;dbl&gt;, v_score &lt;dbl&gt;, g_score &lt;dbl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   ptc_score &lt;dbl&gt;, ti_score &lt;dbl&gt;, cg_score &lt;chr&gt;, mm_score &lt;dbl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   cv_score &lt;dbl&gt;, ci_score &lt;dbl&gt;, ct_score &lt;dbl&gt;, ah_score &lt;dbl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   glomeruli &lt;lgl&gt;, arteries &lt;lgl&gt;, bk &lt;dbl&gt;, gs &lt;dbl&gt;, i_ifta_score &lt;dbl&gt;, …</span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

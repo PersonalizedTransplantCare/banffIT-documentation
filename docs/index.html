@@ -5,15 +5,21 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>What the Package Does (Title Case) • banffIT</title>
+<title>Automatize Standardized Assignation Diagnosis Using the Banff Classification  • banffIT</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/cerulean/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="What the Package Does (Title Case)">
-<meta property="og:description" content="More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the description.">
+<script src="pkgdown.js"></script><meta property="og:title" content="Automatize Standardized Assignation Diagnosis Using the Banff Classification ">
+<meta property="og:description" content="The goal of this package is to provide functions to assign 
+    standardized diagnosis using the Banff Classification (Category 1 to 6 
+    diagnoses, including Acute and Chronic active T-cell mediated rejection as 
+    well as Active, Chronic active, and Chronic antibody mediated rejection). 
+    The main function considers a minimal dataset containing biopsies 
+    information in a specific format (described by a data dictionary), verifies 
+    its content and format (based on the data dictionary), assign diagnoses, and 
+    create a summary report.">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -34,7 +40,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">banffIT</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0.1003</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0.1004</span>
       </span>
     </div>
 
@@ -61,7 +67,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/maelstrom-research/banffIT/" class="external-link">
+  <a href="https://github.com/PersonalizedTransplantCare/banffIT/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -84,13 +90,13 @@
 </h1></div>
 <!-- badges: start -->
 
-<p>The banffIT package provides functions for xxx.</p>
+<p>The banffIT package provides provides functions to assign standardized diagnosis using the Banff Classification (Category 1 to 6 diagnoses, including Acute and Chronic active T-cell mediated rejection as well as Active, Chronic active, and Chronic antibody mediated rejection). The main function <code><a href="reference/banff_launcher.html">banff_launcher()</a></code>considers a minimal dataset containing biopsies information in a specific format (described by a data dictionary), verifies its content and format (based on the data dictionary), assign diagnoses, and create a summary report.</p>
 </div>
 <div class="section level1">
 <h1 id="get-started">Get started<a class="anchor" aria-label="anchor" href="#get-started"></a>
 </h1>
 <div class="section level2">
-<h2 id="install-the-package">Install the package<a class="anchor" aria-label="anchor" href="#install-the-package"></a>
+<h2 id="install-the-package-and-use-the-example-file">Install the package and use the example file<a class="anchor" aria-label="anchor" href="#install-the-package-and-use-the-example-file"></a>
 </h2>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># To install madshapR:</span></span>
@@ -98,7 +104,11 @@
 <span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/maelstrom-research/banffIT" class="external-link">banffIT</a></span><span class="op">)</span></span>
 <span><span class="co"># If you need help with the package, please use:</span></span>
-<span><span class="fu"><a href="reference/banffIT_website.html">banffIT_website</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="reference/banffIT_website.html">banffIT_website</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># use the example file provided. remplace tempdir by a directory name.</span></span>
+<span><span class="va">banff_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"example.xlsx"</span>, package <span class="op">=</span> <span class="st">"banffIT"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/banff_launcher.html">banff_launcher</a></span><span class="op">(</span><span class="va">banff_file</span>, output_folder <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
 
@@ -108,8 +118,8 @@
     <div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/maelstrom-research/banffIT/" class="external-link">Browse source code</a></li>
-<li><a href="https://github.com/maelstrom-research/banffIT/issues" class="external-link">Report a bug</a></li>
+<li><a href="https://github.com/PersonalizedTransplantCare/banffIT/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/PersonalizedTransplantCare/banffIT/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
 

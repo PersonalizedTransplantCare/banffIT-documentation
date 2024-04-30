@@ -26,7 +26,7 @@ about variable distributions and descriptive statistics."><!-- mathjax --><scrip
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">banffIT</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0.1003</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0.1004</span>
       </span>
     </div>
 
@@ -48,7 +48,7 @@ about variable distributions and descriptive statistics."><!-- mathjax --><scrip
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
-  <a href="https://github.com/maelstrom-research/banffIT/" class="external-link">
+  <a href="https://github.com/PersonalizedTransplantCare/banffIT/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -63,7 +63,7 @@ about variable distributions and descriptive statistics."><!-- mathjax --><scrip
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Launch the program</h1>
-    <small class="dont-index">Source: <a href="https://github.com/maelstrom-research/banffIT/blob/HEAD/R/01_banff_launcher.R" class="external-link"><code>R/01_banff_launcher.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/PersonalizedTransplantCare/banffIT/blob/HEAD/R/01_banff_launcher.R" class="external-link"><code>R/01_banff_launcher.R</code></a></small>
     <div class="hidden name"><code>banff_launcher.Rd</code></div>
     </div>
 
@@ -86,8 +86,7 @@ about variable distributions and descriptive statistics.</p>
 <span>  output_folder <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/getwd.html" class="external-link">getwd</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  language <span class="op">=</span> <span class="st">"label:en"</span>,</span>
 <span>  <span class="va">option_filter</span>,</span>
-<span>  detail <span class="op">=</span> <span class="cn">FALSE</span>,</span>
-<span>  .test_TA <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span>  detail <span class="op">=</span> <span class="cn">FALSE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -118,10 +117,6 @@ dataset using <code><a href="https://dplyr.tidyverse.org/reference/filter.html" 
 <dd><p>Optional argument indicating whether the output should include
 temporary variables generated in the process or not. FALSE by default.</p></dd>
 
-
-<dt>.test_TA</dt>
-<dd><p>Temporary parameter to test with 'ta' variable.</p></dd>
-
 </dl></div>
     <div id="value">
     <h2>Value</h2>
@@ -135,7 +130,7 @@ existing) where Excel files are stored.</p>
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="op">{</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">banff_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"example.xlsx"</span>, package <span class="op">=</span> <span class="st">"banffIT"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">banff_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"example-empty.xlsx"</span>, package <span class="op">=</span> <span class="st">"banffIT"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">banff_launcher</span><span class="op">(</span><span class="va">banff_file</span>, output_folder <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
@@ -147,7 +142,7 @@ existing) where Excel files are stored.</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> [1/6] - Import data</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> [2/6] - Evaluation of '<span style="font-weight: bold;">example</span>'</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> [2/6] - Evaluation of '<span style="font-weight: bold;">example.empty</span>'</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Your banff dataset is empty.</span>

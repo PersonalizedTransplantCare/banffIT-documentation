@@ -18,7 +18,7 @@ on the accepted format specified in the data dictionary."><!-- mathjax --><scrip
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">banffIT</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0.1003</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0.1004</span>
       </span>
     </div>
 
@@ -40,7 +40,7 @@ on the accepted format specified in the data dictionary."><!-- mathjax --><scrip
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
-  <a href="https://github.com/maelstrom-research/banffIT/" class="external-link">
+  <a href="https://github.com/PersonalizedTransplantCare/banffIT/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -55,7 +55,7 @@ on the accepted format specified in the data dictionary."><!-- mathjax --><scrip
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Assess a banff dataset</h1>
-    <small class="dont-index">Source: <a href="https://github.com/maelstrom-research/banffIT/blob/HEAD/R/02_algorithm.R" class="external-link"><code>R/02_algorithm.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/PersonalizedTransplantCare/banffIT/blob/HEAD/R/02_algorithm.R" class="external-link"><code>R/02_algorithm.R</code></a></small>
     <div class="hidden name"><code>banff_dataset_evaluate.Rd</code></div>
     </div>
 
@@ -87,22 +87,27 @@ on the accepted format specified in the data dictionary.</p>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/GuiFabre/fabR" class="external-link">fabR</a></span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">banff_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"example.xlsx"</span>, package <span class="op">=</span> <span class="st">"banffIT"</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">banff_dataset</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/fabR/man/read_excel_allsheets.html" class="external-link">read_excel_allsheets</a></span><span class="op">(</span><span class="va">banff_file</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">banff_dataset</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/fabR/man/read_excel_allsheets.html" class="external-link">read_excel_allsheets</a></span><span class="op">(</span><span class="va">banff_file</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span>,<span class="op">]</span></span></span>
 <span class="r-in"><span><span class="fu">banff_dataset_evaluate</span><span class="op">(</span><span class="va">banff_dataset</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Your dataset contains no error. Although, some variables may require your</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> attention because they have some information associated (such as all NA column,</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> or categories not present in the dataset, or possible duplicated columns.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> This message can be ignored if you think your dataset is correct.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $`Data dictionary summary`</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 51 × 9</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    index name       label valueType categorical `NA accepted or not` contraintes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    index name       label valueType categorical `NA accepted or not` constraints</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>     1 patient_id Pati… text      no          NO                   <span style="color: #949494;">"</span>primary (…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>     1 patient_id Pati… text      no          NO                   <span style="color: #949494;">"</span>PRIMARY K…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>     2 centre     Cent… text      no          NO                   <span style="color: #949494;">"</span>None<span style="color: #949494;">"</span>     </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>     3 biopsy_id  Biop… text      no          NO                   <span style="color: #949494;">"</span>None<span style="color: #949494;">"</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>     4 sc_date_bx Date… date      no          NO                   <span style="color: #949494;">"</span>1900 à au…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>     5 date_tx    Tran… date      no          YES                  <span style="color: #949494;">"</span>1900 à au…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>     4 sc_date_bx Date… date      no          NO                   <span style="color: #949494;">"</span>1900 to t…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>     5 date_tx    Tran… date      no          YES                  <span style="color: #949494;">"</span>1900 to t…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>     6 type_bx    Type… integer   yes         YES                  <span style="color: #949494;">"</span>None<span style="color: #949494;">"</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>     7 adequacy   Adeq… integer   yes         YES                  <span style="color: #949494;">"</span>NA if art…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>     7 adequacy   Adeq… integer   yes         YES                  <span style="color: #949494;">"</span>NA if bot…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>     8 fixation_… Fres… integer   yes         NO                   <span style="color: #949494;">"</span>None<span style="color: #949494;">"</span>     </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>     9 fixation_… Para… integer   yes         NO                   <span style="color: #949494;">"</span>None<span style="color: #949494;">"</span>     </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>    10 fixation_… Elec… integer   yes         NO                   <span style="color: #949494;">"</span>None<span style="color: #949494;">"</span>     </span>
@@ -111,11 +116,23 @@ on the accepted format specified in the data dictionary.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   `Categories::description` &lt;chr&gt;</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $`Dataset assessment`</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 2</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 2 variables: column &lt;chr&gt;, Assessment comment &lt;chr&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 51 × 2</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    column            `Assessment comment`                                       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                                      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> patient_id        No problem detected                                        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> centre            No problem detected                                        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> biopsy_id         [INFO] - Possible duplicated columns: biopsy_id ; adequacy…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> sc_date_bx        No problem detected                                        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> date_tx           No problem detected                                        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> type_bx           [INFO] - Possible duplicated columns: type_bx ; ci_score   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> adequacy          [INFO] - Possible duplicated columns: biopsy_id ; adequacy…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> fixation_ff       [INFO] - Possible duplicated columns: fixation_ff ; fixati…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> fixation_paraffin [INFO] - Possible duplicated columns: biopsy_id ; adequacy…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> fixation_elec     [INFO] - Possible duplicated columns: fixation_ff ; fixati…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 41 more rows</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"empty")</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "\n\nYour banff dataset is empty."</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"warn")</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "\n\nYour dataset contains no error. Although, some variables may require your\nattention because they have some information associated (such as all NA column,\nor categories not present in the dataset, or possible duplicated columns.\nThis message can be ignored if you think your dataset is correct."</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
