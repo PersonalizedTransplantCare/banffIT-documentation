@@ -4,7 +4,7 @@ internally runs a series of tests that assess the input dataset. If any
 of these tests fails, the user gets information allowing them to correct the
 input dataset and rerun the process. Once all tests pass, the dataset
 is given as an output with a diagnosis for each observation (using the
-function add_diagnosis() internally). The output dataset, along with its
+function add_diagnoses() internally). The output dataset, along with its
 associated labels (label:en by default) are provided to the user in an Excel
 format file accessible in the output_folder specified (the working directory by
 default). The output dataset comes with a report that summarizes information
@@ -73,7 +73,7 @@ internally runs a series of tests that assess the input dataset. If any
 of these tests fails, the user gets information allowing them to correct the
 input dataset and rerun the process. Once all tests pass, the dataset
 is given as an output with a diagnosis for each observation (using the
-function <code><a href="add_diagnosis.html">add_diagnosis()</a></code> internally). The output dataset, along with its
+function <code><a href="add_diagnoses.html">add_diagnoses()</a></code> internally). The output dataset, along with its
 associated labels (<code>label:en</code> by default) are provided to the user in an Excel
 format file accessible in the output_folder specified (the working directory by
 default). The output dataset comes with a report that summarizes information
@@ -82,7 +82,7 @@ about variable distributions and descriptive statistics.</p>
 
     <div id="ref-usage">
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">banff_launcher</span><span class="op">(</span></span>
-<span>  <span class="va">banff_file</span>,</span>
+<span>  <span class="va">input_dataset</span>,</span>
 <span>  output_folder <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/getwd.html" class="external-link">getwd</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  language <span class="op">=</span> <span class="st">"label:en"</span>,</span>
 <span>  <span class="va">option_filter</span>,</span>
@@ -92,9 +92,9 @@ about variable distributions and descriptive statistics.</p>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>banff_file</dt>
-<dd><p>A character string identifying the path of the file to be
-processed.</p></dd>
+    <dl><dt>input_dataset</dt>
+<dd><p>A character string identifying the path of the dataset
+to be processed.</p></dd>
 
 
 <dt>output_folder</dt>
@@ -103,7 +103,7 @@ the bookdown report files will be saved.</p></dd>
 
 
 <dt>language</dt>
-<dd><p>Optional argument allowing the user to get the diagnosis in a
+<dd><p>Optional argument allowing the user to get the diagnoses in a
 specific language. Options are "label:en" (default), "label:fr", "label:de",
 "label:sp", "label:nl", "label:jp", "label:in".</p></dd>
 
@@ -130,11 +130,11 @@ existing) where Excel files are stored.</p>
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="op">{</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">banff_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"example-empty.xlsx"</span>, package <span class="op">=</span> <span class="st">"banffIT"</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="fu">banff_launcher</span><span class="op">(</span><span class="va">banff_file</span>, output_folder <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">input_dataset</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"template.xlsx"</span>, package <span class="op">=</span> <span class="st">"banffIT"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">banff_launcher</span><span class="op">(</span><span class="va">input_dataset</span>, output_folder <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Welcome to the banff diagnosis helper.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Welcome to the Banff diagnosis helper.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Press [enter] to continue or [esc] to quit.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
@@ -142,10 +142,10 @@ existing) where Excel files are stored.</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> [1/6] - Import data</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> [2/6] - Evaluation of '<span style="font-weight: bold;">example.empty</span>'</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> [2/6] - Evaluation of '<span style="font-weight: bold;">template</span>'</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Your banff dataset is empty.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Your Banff dataset is empty.</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
@@ -157,7 +157,7 @@ existing) where Excel files are stored.</p>
 
 
       <footer><div class="copyright">
-  <p></p><p>Developed by Guillaume Fabre.</p>
+  <p></p><p>Developed by Guillaume Fabre, Ruth Sapir-Pichhadze.</p>
 </div>
 
 <div class="pkgdown">

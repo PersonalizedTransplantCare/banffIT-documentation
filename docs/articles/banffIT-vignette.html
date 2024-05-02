@@ -89,7 +89,7 @@
     
     
 <p>The banffIT package provides provides functions to assign
-standardized diagnosis using the Banff Classification (Category 1 to 6
+standardized diagnoses using the Banff Classification (Category 1 to 6
 diagnoses, including Acute and Chronic active T-cell mediated rejection
 as well as Active, Chronic active, and Chronic antibody mediated
 rejection). The main function <code><a href="../reference/banff_launcher.html">banff_launcher()</a></code>considers a
@@ -107,13 +107,13 @@ report.</p>
 <code class="sourceCode R"><span><span class="co"># To install banffIT:</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">'banffIT'</span><span class="op">)</span></span>
 <span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/maelstrom-research/banffIT" class="external-link">banffIT</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/PersonalizedTransplantCare/banffIT" class="external-link">banffIT</a></span><span class="op">)</span></span>
 <span><span class="co"># If you need help with the package, please use:</span></span>
 <span><span class="fu"><a href="../reference/banffIT_website.html">banffIT_website</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># use the example file provided. remplace tempdir by a directory name.</span></span>
-<span><span class="va">banff_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"example.xlsx"</span>, package <span class="op">=</span> <span class="st">"banffIT"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/banff_launcher.html">banff_launcher</a></span><span class="op">(</span><span class="va">banff_file</span>, output_folder <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">input_dataset</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"example.xlsx"</span>, package <span class="op">=</span> <span class="st">"banffIT"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/banff_launcher.html">banff_launcher</a></span><span class="op">(</span><span class="va">input_dataset</span>, output_folder <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
   </div>
@@ -130,7 +130,7 @@ report.</p>
 
       <footer><div class="copyright">
   <p></p>
-<p>Developed by Guillaume Fabre.</p>
+<p>Developed by Guillaume Fabre, Ruth Sapir-Pichhadze.</p>
 </div>
 
 <div class="pkgdown">
