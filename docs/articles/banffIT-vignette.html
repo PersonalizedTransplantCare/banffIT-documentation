@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">banffIT</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0.1004</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0.1005</span>
       </span>
     </div>
 
@@ -88,20 +88,57 @@
 
     
     
-<p>The banffIT package provides functions to assign standardized
-diagnoses using the Banff Classification (Category 1 to 6 diagnoses,
-including Acute and Chronic active T-cell mediated rejection as well as
-Active, Chronic active, and Chronic antibody mediated rejection). The
-main function <code><a href="../reference/banff_launcher.html">banff_launcher()</a></code>considers a minimal dataset
-containing biopsies information in a specific format (described by a
-data dictionary), verifies its content and format (based on the data
-dictionary), assign diagnoses, and create a summary report.</p>
+<p>This package is designed to assign standardized diagnoses using the
+Banff Classification (Category 1 to 6 diagnoses, including Acute and
+Chronic active T-cell mediated rejection as well as Active, Chronic
+active, and Chronic antibody mediated rejection).</p>
+<p>The following steps will guide you in this process of diagnosis
+assignment with the package. To get your dataset ready and in a correct
+format, you must refer to the data dictionary provided with the package
+<a href="https://github.com/PersonalizedTransplantCare/banffIT/blob/testing/inst/extdata/data_dictionary_Banff_2024_04_19.xlsx" download class="external-link">here</a>
+(or using the function <code><a href="../reference/get_banff_dictionary.html">get_banff_dictionary()</a></code> in R). This
+data dictionary contains metadata specifying how your input dataset
+should be formatted and what information it must contain.</p>
 <div class="section level2">
-<h2 id="get-started">Get started<a class="anchor" aria-label="anchor" href="#get-started"></a>
+<h2 id="having-your-dataset-ready">1. Having your dataset ready<a class="anchor" aria-label="anchor" href="#having-your-dataset-ready"></a>
 </h2>
-<div class="section level3">
-<h3 id="install-the-package-and-use-the-example-file">Install the package and use the example file<a class="anchor" aria-label="anchor" href="#install-the-package-and-use-the-example-file"></a>
-</h3>
+<p>A template (available
+<a href="https://github.com/PersonalizedTransplantCare/banffIT/blob/testing/inst/extdata/template.xlsx" download class="external-link">here</a>
+or <code><a href="../reference/get_banff_template.html">get_banff_template()</a></code> in R) as well as an example dataset
+(
+<a href="https://github.com/PersonalizedTransplantCare/banffIT/blob/testing/inst/extdata/example.xlsx" download class="external-link">here</a>
+or <code><a href="../reference/get_banff_example.html">get_banff_example()</a></code> in R) are also available with the
+package to help you construct and prepare your dataset.</p>
+</div>
+<div class="section level2">
+<h2 id="run-the-process-with-the-main-function">2. Run the process with the main function<a class="anchor" aria-label="anchor" href="#run-the-process-with-the-main-function"></a>
+</h2>
+<p>The main function <code><a href="../reference/banff_launcher.html">banff_launcher()</a></code> will go through 3
+steps. It will:</p>
+<ul>
+<li><ol style="list-style-type: lower-alpha">
+<li>Evaluate your input dataset (using
+<code><a href="../reference/banff_dataset_evaluate.html">banff_dataset_evaluate()</a></code> internally). If your input dataset
+is not in the correct format or is missing information, a report will be
+saved in your output folder and will flag variables and rows that are
+not formatted properly. The next step will not run if the input dataset
+is not in the correct format.</li>
+</ol></li>
+<li><ol start="2" style="list-style-type: lower-alpha">
+<li>Assign diagnosis to each observation (using
+<code><a href="../reference/calculate_adequacy.html">calculate_adequacy()</a></code> and <code><a href="../reference/add_diagnoses.html">add_diagnoses()</a></code>
+internally).</li>
+</ol></li>
+<li><ol start="3" style="list-style-type: lower-alpha">
+<li>Save the output dataset containing diagnoses, summary report with
+descriptive statistics of your output dataset, and the data
+dictionary.</li>
+</ol></li>
+</ul>
+</div>
+<div class="section level2">
+<h2 id="use-the-example-file">3. Use the example file<a class="anchor" aria-label="anchor" href="#use-the-example-file"></a>
+</h2>
 <p>This command example runs the diagnosis assignment process on the
 dataset specified in the input_file path. The output files will be saved
 in path_folder/example. The diagnoses will be displayed in English and
@@ -121,12 +158,11 @@ TRUE.</p>
 <span><span class="co"># use example</span></span>
 <span><span class="va">input_file</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"example.xlsx"</span>, package <span class="op">=</span> <span class="st">"banffIT"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/banff_launcher.html">banff_launcher</a></span><span class="op">(</span></span>
-<span>  input_file <span class="op">=</span> <span class="va">input_file</span>,</span>
-<span>  output_folder <span class="op">=</span> <span class="st">'folder_path/example'</span>,</span>
-<span>  language <span class="op">=</span> <span class="st">'label:en'</span>,</span>
-<span>  option_filter <span class="op">=</span> <span class="va">adequacy</span> <span class="op">==</span> <span class="fl">1</span>,</span>
-<span>  detail <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
-</div>
+<span> input_file <span class="op">=</span> <span class="va">input_file</span>,</span>
+<span> output_folder <span class="op">=</span> <span class="st">'folder_path/example'</span>,</span>
+<span> language <span class="op">=</span> <span class="st">'label:en'</span>,</span>
+<span> option_filter <span class="op">=</span> <span class="va">adequacy</span> <span class="op">==</span> <span class="fl">1</span>,</span>
+<span> detail <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 </div>
   </div>
 

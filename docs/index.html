@@ -19,7 +19,7 @@
     The main function considers a minimal dataset containing biopsy 
     information in a specific format (described by a data dictionary), verifies 
     its content and format (based on the data dictionary), assign diagnoses, and 
-    create a summary report.">
+    creates a summary report.">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -40,7 +40,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">banffIT</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0.1004</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0.1005</span>
       </span>
     </div>
 
@@ -100,6 +100,22 @@
 <li>function <code><a href="reference/banff_launcher.html">banff_launcher()</a></code> This function takes a path string identifying the input file path. The function internally runs a series of tests that assess the input dataset. If any of these tests fails, the user gets information allowing them to correct the input dataset and rerun the process. Once all tests pass, the dataset is given as an output with a diagnosis for each observation (using the function <code><a href="reference/add_diagnoses.html">add_diagnoses()</a></code> internally). The output dataset, along with its associated labels (“label:en” by default) are provided to the user in an Excel format file accessible in the output_folder specified (the working directory by default). The output dataset comes with a report that summarizes information about variable distributions and descriptive statistics.</li>
 </ul>
 </div>
+</div>
+<div class="section level1">
+<h1 id="download-section">Download section<a class="anchor" aria-label="anchor" href="#download-section"></a>
+</h1>
+<button>
+<a href="https://github.com/PersonalizedTransplantCare/banffIT/blob/testing/inst/extdata/data_dictionary_Banff_2024_04_19.xlsx" download class="external-link">Data Dictionary</a>
+</button>
+<p>also available in R using <code><a href="reference/get_banff_dictionary.html">get_banff_dictionary()</a></code> </p>
+<button>
+<a href="https://github.com/PersonalizedTransplantCare/banffIT/blob/testing/inst/extdata/template.xlsx" download class="external-link">Template</a>
+</button>
+<p>also available in R using <code><a href="reference/get_banff_template.html">get_banff_template()</a></code> </p>
+<button>
+<a href="https://github.com/PersonalizedTransplantCare/banffIT/blob/testing/inst/extdata/example.xlsx" download class="external-link">Example</a>
+</button>
+<p>also available in R using <code><a href="reference/get_banff_example.html">get_banff_example()</a></code> </p>
 </div>
 <div class="section level1">
 <h1 id="get-started">Get started<a class="anchor" aria-label="anchor" href="#get-started"></a>
