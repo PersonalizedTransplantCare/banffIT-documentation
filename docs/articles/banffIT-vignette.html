@@ -115,26 +115,20 @@ package to help you construct and prepare your dataset.</p>
 </h2>
 <p>The main function <code><a href="../reference/banff_launcher.html">banff_launcher()</a></code> will go through 3
 steps. It will:</p>
-<ul>
-<li><ol style="list-style-type: lower-alpha">
-<li>Evaluate your input dataset (using
+<ol style="list-style-type: lower-alpha">
+<li><p>Evaluate your input dataset (using
 <code><a href="../reference/banff_dataset_evaluate.html">banff_dataset_evaluate()</a></code> internally). If your input dataset
 is not in the correct format or is missing information, a report will be
 saved in your output folder and will flag variables and rows that are
 not formatted properly. The next step will not run if the input dataset
-is not in the correct format.</li>
-</ol></li>
-<li><ol start="2" style="list-style-type: lower-alpha">
-<li>Assign diagnosis to each observation (using
+is not in the correct format.</p></li>
+<li><p>Assign diagnosis to each observation (using
 <code><a href="../reference/calculate_adequacy.html">calculate_adequacy()</a></code> and <code><a href="../reference/add_diagnoses.html">add_diagnoses()</a></code>
-internally).</li>
-</ol></li>
-<li><ol start="3" style="list-style-type: lower-alpha">
-<li>Save the output dataset containing diagnoses, summary report with
+internally).</p></li>
+<li><p>Save the output dataset containing diagnoses, summary report with
 descriptive statistics of your output dataset, and the data
-dictionary.</li>
-</ol></li>
-</ul>
+dictionary.</p></li>
+</ol>
 </div>
 <div class="section level2">
 <h2 id="use-the-example-file">3. Use the example file<a class="anchor" aria-label="anchor" href="#use-the-example-file"></a>

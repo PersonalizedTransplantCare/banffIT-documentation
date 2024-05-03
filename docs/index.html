@@ -96,9 +96,6 @@
 </h2>
 <p><img src="reference/figures/Schema-launcher.png" style="width: 100%; margin: 0 auto; display: flex; justify-content: center;"></p>
 <p><br></p>
-<ul>
-<li>function <code><a href="reference/banff_launcher.html">banff_launcher()</a></code> This function takes a path string identifying the input file path. The function internally runs a series of tests that assess the input dataset. If any of these tests fails, the user gets information allowing them to correct the input dataset and rerun the process. Once all tests pass, the dataset is given as an output with a diagnosis for each observation (using the function <code><a href="reference/add_diagnoses.html">add_diagnoses()</a></code> internally). The output dataset, along with its associated labels (“label:en” by default) are provided to the user in an Excel format file accessible in the output_folder specified (the working directory by default). The output dataset comes with a report that summarizes information about variable distributions and descriptive statistics.</li>
-</ul>
 </div>
 </div>
 <div class="section level1">
@@ -123,7 +120,6 @@
 <div class="section level2">
 <h2 id="install-the-package-and-use-the-example-file">Install the package and use the example file<a class="anchor" aria-label="anchor" href="#install-the-package-and-use-the-example-file"></a>
 </h2>
-<p>This command example runs the diagnosis assignment process on the dataset specified in the input_file path. The output files will be saved in path_folder/example. The diagnoses will be displayed in English and only observation with adequacy == 1 will be taken into consideration due to the option_filter argument. Finally, the output dataset will contain variables generated in the process due to the argument “detail” set to TRUE.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="co"># To install banffIT</span></span>
