@@ -1,6 +1,6 @@
 #### templates ####
-
 library(banffIT)
+library(fabR)
 
 banff_dictionary <- get_banff_dictionary()
 banff_template   <- get_banff_template()
