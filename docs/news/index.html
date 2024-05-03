@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">banffIT</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0.1005</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0</span>
       </span>
     </div>
 
@@ -62,19 +62,18 @@
 <p>The banffIT package provides provides functions to assign standardized diagnoses using the Banff Classification (Category 1 to 6 diagnoses, including Acute and Chronic active T-cell mediated rejection as well as Active, Chronic active, and Chronic antibody mediated rejection). The main function <code><a href="../reference/banff_launcher.html">banff_launcher()</a></code>considers a minimal dataset containing biopsies information in a specific format (described by a data dictionary), verifies its content and format (based on the data dictionary), assign diagnoses, and create a summary report.</p>
 <div class="section level3">
 <h3 id="main-functionality-0-1-0">Main functionality<a class="anchor" aria-label="anchor" href="#main-functionality-0-1-0"></a></h3>
-<ul><li>function <code><a href="../reference/banff_launcher.html">banff_launcher()</a></code> This function takes a path string identifying the input file path. The function internally runs a series of tests that assess the input dataset. If any of these tests fails, the user gets information allowing them to correct the input dataset and rerun the process. Once all tests pass, the dataset is given as an output with a diagnosis for each observation (using the function <code><a href="../reference/add_diagnoses.html">add_diagnoses()</a></code> internally). The output dataset, along with its associated labels (“label:en” by default) are provided to the user in an Excel format file accessible in the output_folder specified (the working directory by default). The output dataset comes with a report that summarizes information about variable distributions and descriptive statistics.</li>
+<ul><li>
+<code><a href="../reference/banff_launcher.html">banff_launcher()</a></code> This function takes a path string identifying the input file path. The function internally runs a series of tests that assess the input dataset. If any of these tests fails, the user gets information allowing them to correct the input dataset and rerun the process. Once all tests pass, the dataset is given as an output with a diagnosis for each observation (using the function <code><a href="../reference/add_diagnoses.html">add_diagnoses()</a></code> internally). The output dataset, along with its associated labels (“label:en” by default) are provided to the user in an Excel format file accessible in the output_folder specified (the working directory by default). The output dataset comes with a report that summarizes information about variable distributions and descriptive statistics.</li>
 </ul></div>
 <div class="section level3">
 <h3 id="additional-functions-used-in-the-main-function-but-can-be-used-separately-0-1-0">Additional functions (used in the main function, but can be used separately)<a class="anchor" aria-label="anchor" href="#additional-functions-used-in-the-main-function-but-can-be-used-separately-0-1-0"></a></h3>
-<ul><li><p>function <code><a href="../reference/banff_dataset_evaluate.html">banff_dataset_evaluate()</a></code> This function takes a dataset and evaluates its format and content based on the accepted format specified in the data dictionary.</p></li>
-<li><p>function <code><a href="../reference/calculate_adequacy.html">calculate_adequacy()</a></code> A tibble object with two columns: the calculated adequacy (adequacy_calculated) and the adequacy specified in input (adequacy_input).</p></li>
-<li><p>function <code><a href="../reference/dataset_cat_as_labels.html">dataset_cat_as_labels()</a></code> <a href="https://maelstrom-research.github.io/madshapR-documentation/reference/dataset_cat_as_labels.html" class="external-link">Function</a> exported from the madshapR package.</p></li>
-<li><p>function <code><a href="../reference/add_diagnoses.html">add_diagnoses()</a></code> This function takes a dataset and returns a diagnosis for each observation. For the function to run, the dataset must not contain any errors that <code><a href="../reference/banff_launcher.html">banff_launcher()</a></code>would have detected. Please prefer using <code><a href="../reference/banff_launcher.html">banff_launcher()</a></code> to run additional tests.</p></li>
-<li><p>function <code><a href="../reference/dataset_summarize.html">dataset_summarize()</a></code> <a href="https://maelstrom-research.github.io/madshapR-documentation/reference/summarize.html" class="external-link">Function</a> exported from the madshapR package.</p></li>
+<ul><li><p><code><a href="../reference/banff_dataset_evaluate.html">banff_dataset_evaluate()</a></code> This function takes a dataset and evaluates its format and content based on the accepted format specified in the data dictionary.</p></li>
+<li><p><code><a href="../reference/calculate_adequacy.html">calculate_adequacy()</a></code> A tibble object with two columns: the calculated adequacy (adequacy_calculated) and the adequacy specified in input (adequacy_input).</p></li>
+<li><p><code><a href="../reference/add_diagnoses.html">add_diagnoses()</a></code> This function takes a dataset and returns a diagnosis for each observation. For the function to run, the dataset must not contain any errors that <code><a href="../reference/banff_launcher.html">banff_launcher()</a></code>would have detected. Please prefer using <code><a href="../reference/banff_launcher.html">banff_launcher()</a></code> to run additional tests.</p></li>
 </ul></div>
 <div class="section level3">
 <h3 id="helper-functions-0-1-0">Helper functions<a class="anchor" aria-label="anchor" href="#helper-functions-0-1-0"></a></h3>
-<ul><li><p>function <code><a href="../reference/get_banff_dictionary.html">get_banff_dictionary()</a></code> This function gets the data dictionary used to control the consistency of the Banff dataset.</p></li>
+<ul><li><p><code><a href="../reference/get_banff_dictionary.html">get_banff_dictionary()</a></code>, <code><a href="../reference/get_banff_example.html">get_banff_example()</a></code>, <code><a href="../reference/get_banff_template.html">get_banff_template()</a></code> This function gets the data dictionary used to control the consistency of the Banff dataset, a example dataset and a template.</p></li>
 <li><p>function <code><a href="../reference/banffIT_website.html">banffIT_website()</a></code> This function sends the user to the online documentation for the package, which includes a description of the latest version of the package, vignettes, user guides, and a reference list of functions and help pages.</p></li>
 </ul></div>
 </div>
