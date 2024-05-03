@@ -6,10 +6,10 @@ add_diagnoses() function which assigns diagnoses to each observation of the
 dataset. The function evaluates whether:
 The input file is a dataset
 All mandatory variables are present in the dataset
-Missing values (NA) values are present in variables where they are not allowed
+Missing values (NA) are present in variables where they are not allowed
 Data types are correct.
 The combination of ID, center, and biopsy date is unique
-There are duplicated columns in the dataset
+There are duplicated variable in the dataset
 Dates are valid
 Content values follow the category values as specified in the data dictionary
 Constraints specified in the data dictionary are respected
@@ -80,10 +80,10 @@ checks to make sure the dataset is ready to be processed by the
 <code><a href="add_diagnoses.html">add_diagnoses()</a></code> function which assigns diagnoses to each observation of the
 dataset. The function evaluates whether:</p><ul><li><p>The input file is a dataset</p></li>
 <li><p>All mandatory variables are present in the dataset</p></li>
-<li><p>Missing values (NA) values are present in variables where they are not allowed</p></li>
+<li><p>Missing values (NA) are present in variables where they are not allowed</p></li>
 <li><p>Data types are correct.</p></li>
 <li><p>The combination of ID, center, and biopsy date is unique</p></li>
-<li><p>There are duplicated columns in the dataset</p></li>
+<li><p>There are duplicated variable in the dataset</p></li>
 <li><p>Dates are valid</p></li>
 <li><p>Content values follow the category values as specified in the data dictionary</p></li>
 <li><p>Constraints specified in the data dictionary are respected</p></li>
@@ -135,10 +135,10 @@ dataset. The function evaluates whether:</p><ul><li><p>The input file is a datas
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $`Dataset assessment`</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 2</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 2 variables: column &lt;chr&gt;, Assessment comment &lt;chr&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 2 variables: variable &lt;chr&gt;, Assessment comment &lt;chr&gt;</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"empty")</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "\n\nYour Banff dataset is empty."</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "\n\nYour input dataset is empty."</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
