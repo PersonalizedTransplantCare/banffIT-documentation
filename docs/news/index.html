@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">banffIT</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.0</span>
       </span>
     </div>
 
@@ -57,6 +57,22 @@
       <small>Source: <a href="https://github.com/PersonalizedTransplantCare/banffIT/blob/HEAD/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="2.1.0" id="banffit-210-release--2025-06-20">banffIT 2.1.0 (release : 2025-06-20)<a class="anchor" aria-label="anchor" href="#banffit-210-release--2025-06-20"></a></h2>
+<div class="section level3">
+<h3 id="update-dependency-madshapr-2-1-0">update dependency madshapR<a class="anchor" aria-label="anchor" href="#update-dependency-madshapr-2-1-0"></a></h3>
+<p>Due to update in madshapR package, the name columns internally used in <code><a href="../reference/banff_launcher.html">banff_launcher()</a></code> have been changed. The rest of the functions are not affected.</p>
+</div>
+</div>
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="2.0.0" id="banffit-200">banffIT 2.0.0<small>2025-07-05</small><a class="anchor" aria-label="anchor" href="#banffit-200"></a></h2>
+<p>Implementation of the new parameter ‘version’ which allows the user to select a version of the Banff classification. At the moment of the development, the available versions are 2017 and 2022. The latest version (2022) is the default. The new version includes two new variables in the data dictionary (xm and abo_i) and 4 new diagnostics codes for diag_code_2.</p>
+<div class="section level3">
+<h3 id="bug-fixes-and-improvements-2-0-0">Bug fixes and improvements<a class="anchor" aria-label="anchor" href="#bug-fixes-and-improvements-2-0-0"></a></h3>
+<ul><li>
+<code><a href="../reference/calculate_adequacy.html">calculate_adequacy()</a></code> There was an error adressing the proper order of participants, giving occasionally wrong calculation of the adequacy. This has been fixed, using an index to ensure identical order in the output.</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="1.0.1" id="banffit-101">banffIT 1.0.1<a class="anchor" aria-label="anchor" href="#banffit-101"></a></h2>
 <p>Error in document. There was a typo in banff_example.xlsx name. Only Read me and vignette were affected.</p>

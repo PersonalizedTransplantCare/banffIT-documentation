@@ -32,7 +32,7 @@ Constraints specified in the data dictionary are respected
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">banffIT</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.0</span>
       </span>
     </div>
 
@@ -90,13 +90,19 @@ dataset. The function evaluates whether:</p><ul><li><p>The input file is a datas
 </ul></div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">banff_dataset_evaluate</span><span class="op">(</span><span class="va">banff_dataset</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">banff_dataset_evaluate</span><span class="op">(</span><span class="va">banff_dataset</span>, version <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>banff_dataset</dt>
 <dd><p>A tibble object.</p></dd>
+
+
+<dt>version</dt>
+<dd><p>A character string referring the version of Banff classification.
+The most recent classification is the default.
+Options are "2022" (default), "2017".</p></dd>
 
 </dl></div>
     <div id="value">
@@ -116,7 +122,7 @@ dataset. The function evaluates whether:</p><ul><li><p>The input file is a datas
 <span class="r-in"><span><span class="op">}</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $`Data dictionary summary`</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 51 × 9</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 53 × 9</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    index name       label valueType categorical `NA accepted or not` constraints</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>     1 patient_id Pati… text      no          NO                   <span style="color: #949494;">"</span>PRIMARY K…</span>
@@ -125,11 +131,11 @@ dataset. The function evaluates whether:</p><ul><li><p>The input file is a datas
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>     4 sc_date_bx Date… date      no          NO                   <span style="color: #949494;">"</span>1900 to t…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>     5 date_tx    Tran… date      no          YES                  <span style="color: #949494;">"</span>1900 to t…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>     6 type_bx    Type… integer   yes         YES                  <span style="color: #949494;">"</span>None<span style="color: #949494;">"</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>     7 adequacy   Adeq… integer   yes         YES                  <span style="color: #949494;">"</span>NA if bot…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>     8 fixation_… Fres… integer   yes         NO                   <span style="color: #949494;">"</span>None<span style="color: #949494;">"</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>     9 fixation_… Para… integer   yes         NO                   <span style="color: #949494;">"</span>None<span style="color: #949494;">"</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>    10 fixation_… Elec… integer   yes         NO                   <span style="color: #949494;">"</span>None<span style="color: #949494;">"</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 41 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>     7 xm         Pre-… integer   yes         YES                  <span style="color: #949494;">"</span>None<span style="color: #949494;">"</span>     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>     8 abo_i      ABO … integer   yes         YES                  <span style="color: #949494;">"</span>None<span style="color: #949494;">"</span>     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>     9 adequacy   Adeq… integer   yes         YES                  <span style="color: #949494;">"</span>NA if bot…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>    10 fixation_… Fres… integer   yes         NO                   <span style="color: #949494;">"</span>None<span style="color: #949494;">"</span>     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 43 more rows</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 2 more variables: `Categories::labels` &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   `Categories::description` &lt;chr&gt;</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>

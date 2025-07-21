@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Automatize Diagnosis Standardized Assignation Using the Banff Classification • banffIT</title>
+<title>Automated Standardized Assignment of the Banff Classification • banffIT</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/cerulean/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="Automatize Diagnosis Standardized Assignation Using the Banff Classification">
+<script src="pkgdown.js"></script><meta property="og:title" content="Automated Standardized Assignment of the Banff Classification">
 <meta property="og:description" content="Assigns standardized diagnoses using the Banff Classification
     (Category 1 to 6 diagnoses, including Acute and Chronic active T-cell
     mediated rejection as well as Active, Chronic active, and Chronic antibody
@@ -42,7 +42,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">banffIT</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.0</span>
       </span>
     </div>
 
@@ -92,7 +92,7 @@
 </h1></div>
 <!-- badges: start -->
 
-<p>The banffIT package provides functions to assign standardized diagnoses using the Banff Classification (Category 1 to 6 diagnoses, including Acute and Chronic active T-cell mediated rejection as well as Active, Chronic active, and Chronic antibody mediated rejection). The main function <code><a href="reference/banff_launcher.html">banff_launcher()</a></code>considers a minimal dataset containing biopsies information in a specific format (described by a data dictionary), verifies its content and format (based on the data dictionary), assigns diagnoses, and creates a summary report.</p>
+<p>The banffIT package provides functions to assign standardized diagnoses using the Banff Classification (Category 1 to 6 diagnoses, including Acute and Chronic active T-cell mediated rejection as well as Active, Chronic active, and Chronic antibody mediated rejection). The main function <code><a href="reference/banff_launcher.html">banff_launcher()</a></code>considers a minimal dataset containing biopsies information in a specific format (described by a data dictionary), verifies its content and format (based on the data dictionary), assigns diagnoses, and creates a summary report. It is possible to use different versions of the Banff classification.</p>
 <div class="section level2">
 <h2 id="main-functionality">Main functionality<a class="anchor" aria-label="anchor" href="#main-functionality"></a>
 </h2>
@@ -138,10 +138,13 @@
 <span><span class="fu"><a href="reference/banffIT_website.html">banffIT_website</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># use example</span></span>
-<span><span class="va">input_file</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"banff_example.xlsx"</span>, package <span class="op">=</span> <span class="st">"banffIT"</span><span class="op">)</span></span>
+<span><span class="va">version</span> <span class="op">&lt;-</span> <span class="fl">2022</span></span>
+<span><span class="va">input_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">version</span>,<span class="st">"/banff_example.xlsx"</span><span class="op">)</span>, </span>
+<span>                          package <span class="op">=</span> <span class="st">"banffIT"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/banff_launcher.html">banff_launcher</a></span><span class="op">(</span></span>
 <span>  input_file <span class="op">=</span> <span class="va">input_file</span>,</span>
 <span>  output_folder <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="co"># 'folder_path/example'</span></span>
+<span>  version <span class="op">=</span> <span class="va">version</span>,</span>
 <span>  language <span class="op">=</span> <span class="st">'label:en'</span>,</span>
 <span>  option_filter <span class="op">=</span> <span class="va">adequacy</span> <span class="op">==</span> <span class="fl">1</span>,</span>
 <span>  detail <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>

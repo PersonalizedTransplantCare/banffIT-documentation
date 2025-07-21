@@ -26,7 +26,7 @@ and descriptive statistics."><!-- mathjax --><script src="https://cdnjs.cloudfla
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">banffIT</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.0</span>
       </span>
     </div>
 
@@ -85,6 +85,7 @@ and descriptive statistics.</p>
 <span>  <span class="va">input_file</span>,</span>
 <span>  <span class="va">output_folder</span>,</span>
 <span>  language <span class="op">=</span> <span class="st">"label:en"</span>,</span>
+<span>  version <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  <span class="va">option_filter</span>,</span>
 <span>  detail <span class="op">=</span> <span class="cn">FALSE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
@@ -107,6 +108,12 @@ the output files will be saved.</p></dd>
 <dd><p>Optional argument allowing the user to get the diagnoses in a
 specific language. Options are "label:en" (default), "label:fr", "label:de",
 "label:sp", "label:nl", "label:jp", "label:in".</p></dd>
+
+
+<dt>version</dt>
+<dd><p>A character string referring the version of Banff classification.
+The most recent classification is the default.
+Options are "2022" (default), "2017".</p></dd>
 
 
 <dt>option_filter</dt>
@@ -132,7 +139,9 @@ existing) where Excel files are stored.</p>
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="op">{</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">input_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"banff_template.xlsx"</span>, package <span class="op">=</span> <span class="st">"banffIT"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">version</span> <span class="op">&lt;-</span> <span class="fu"><a href="get_banff_version.html">get_banff_version</a></span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">input_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>,</span></span>
+<span class="r-in"><span>   <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">version</span>,<span class="st">"/banff_template.xlsx"</span><span class="op">)</span>, package <span class="op">=</span> <span class="st">"banffIT"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">banff_launcher</span><span class="op">(</span><span class="va">input_file</span>, output_folder <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>

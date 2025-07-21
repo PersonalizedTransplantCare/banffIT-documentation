@@ -20,7 +20,7 @@ banff_launcher() to run additional tests."><!-- mathjax --><script src="https://
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">banffIT</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.0</span>
       </span>
     </div>
 
@@ -69,13 +69,19 @@ that <code><a href="banff_launcher.html">banff_launcher()</a></code> would have 
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">add_diagnoses</span><span class="op">(</span><span class="va">banff_dataset</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">add_diagnoses</span><span class="op">(</span><span class="va">banff_dataset</span>, version <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>banff_dataset</dt>
 <dd><p>A tibble object.</p></dd>
+
+
+<dt>version</dt>
+<dd><p>A character string referring the version of Banff classification.
+The most recent classification is the default.
+Options are "2022" (default), "2017".</p></dd>
 
 </dl></div>
     <div id="value">
@@ -93,14 +99,14 @@ that <code><a href="banff_launcher.html">banff_launcher()</a></code> would have 
 <span class="r-in"><span><span class="fu">add_diagnoses</span><span class="op">(</span><span class="va">banff_dataset</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 119</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 119 variables: patient_id &lt;lgl&gt;, center &lt;lgl&gt;, biopsy_id &lt;lgl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   sc_date_bx &lt;lgl&gt;, date_tx &lt;lgl&gt;, type_bx &lt;lgl&gt;, adequacy &lt;lgl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   fixation_ff &lt;lgl&gt;, fixation_paraffin &lt;lgl&gt;, fixation_elec &lt;lgl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   fixation_rna &lt;lgl&gt;, microscopy &lt;lgl&gt;, c4d_if &lt;lgl&gt;, c4d_ihc &lt;lgl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   dsa &lt;lgl&gt;, hist_dsa &lt;lgl&gt;, i_score &lt;lgl&gt;, t_score &lt;lgl&gt;, v_score &lt;lgl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   g_score &lt;lgl&gt;, ptc_score &lt;lgl&gt;, ti_score &lt;lgl&gt;, cg_score &lt;lgl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   mm_score &lt;lgl&gt;, cv_score &lt;lgl&gt;, ci_score &lt;lgl&gt;, ct_score &lt;lgl&gt;, …</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 124</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 124 variables: patient_id &lt;lgl&gt;, center &lt;lgl&gt;, biopsy_id &lt;lgl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   sc_date_bx &lt;lgl&gt;, date_tx &lt;lgl&gt;, type_bx &lt;lgl&gt;, xm &lt;lgl&gt;, abo_i &lt;lgl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   adequacy &lt;lgl&gt;, fixation_ff &lt;lgl&gt;, fixation_paraffin &lt;lgl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   fixation_elec &lt;lgl&gt;, fixation_rna &lt;lgl&gt;, microscopy &lt;lgl&gt;, c4d_if &lt;lgl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   c4d_ihc &lt;lgl&gt;, dsa &lt;lgl&gt;, hist_dsa &lt;lgl&gt;, i_score &lt;lgl&gt;, t_score &lt;lgl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   v_score &lt;lgl&gt;, g_score &lt;lgl&gt;, ptc_score &lt;lgl&gt;, ti_score &lt;lgl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   cg_score &lt;lgl&gt;, mm_score &lt;lgl&gt;, cv_score &lt;lgl&gt;, ci_score &lt;lgl&gt;, …</span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

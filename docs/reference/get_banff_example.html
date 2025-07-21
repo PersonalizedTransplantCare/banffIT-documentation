@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">banffIT</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.0</span>
       </span>
     </div>
 
@@ -63,9 +63,17 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">get_banff_example</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">get_banff_example</span><span class="op">(</span>version <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
     </div>
 
+    <div id="arguments">
+    <h2>Arguments</h2>
+    <dl><dt>version</dt>
+<dd><p>A character string referring the version of Banff classification.
+The most recent classification is the default.
+Options are "2022" (default), "2017".</p></dd>
+
+</dl></div>
     <div id="value">
     <h2>Value</h2>
     
@@ -80,7 +88,7 @@
 <span class="r-in"><span>  <span class="fu">get_banff_example</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 34 × 51</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 34 × 53</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    patient_id center   biopsy_id sc_date_bx          date_tx             type_bx</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>        100 center_…         1 2018-12-07 <span style="color: #949494;">00:00:00</span> 2018-01-31 <span style="color: #949494;">00:00:00</span>       2</span>
@@ -94,12 +102,12 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>        104 center_…         9 2018-08-28 <span style="color: #949494;">00:00:00</span> 2018-03-04 <span style="color: #949494;">00:00:00</span>       2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>        104 center_…        10 2020-02-14 <span style="color: #949494;">00:00:00</span> 2018-03-04 <span style="color: #949494;">00:00:00</span>       2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 24 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 45 more variables: adequacy &lt;dbl&gt;, fixation_ff &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   fixation_paraffin &lt;dbl&gt;, fixation_elec &lt;dbl&gt;, fixation_rna &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   microscopy &lt;dbl&gt;, c4d_if &lt;dbl&gt;, c4d_ihc &lt;dbl&gt;, dsa &lt;dbl&gt;, hist_dsa &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   i_score &lt;dbl&gt;, t_score &lt;dbl&gt;, v_score &lt;dbl&gt;, g_score &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   ptc_score &lt;dbl&gt;, ti_score &lt;dbl&gt;, cg_score &lt;chr&gt;, mm_score &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   cv_score &lt;dbl&gt;, ci_score &lt;dbl&gt;, ct_score &lt;dbl&gt;, ah_score &lt;dbl&gt;, …</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 47 more variables: xm &lt;dbl&gt;, abo_i &lt;dbl&gt;, adequacy &lt;dbl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   fixation_ff &lt;dbl&gt;, fixation_paraffin &lt;dbl&gt;, fixation_elec &lt;dbl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   fixation_rna &lt;dbl&gt;, microscopy &lt;dbl&gt;, c4d_if &lt;dbl&gt;, c4d_ihc &lt;dbl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   dsa &lt;dbl&gt;, hist_dsa &lt;dbl&gt;, i_score &lt;dbl&gt;, t_score &lt;dbl&gt;, v_score &lt;dbl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   g_score &lt;dbl&gt;, ptc_score &lt;dbl&gt;, ti_score &lt;dbl&gt;, cg_score &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   mm_score &lt;dbl&gt;, cv_score &lt;dbl&gt;, ci_score &lt;dbl&gt;, ct_score &lt;dbl&gt;, …</span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

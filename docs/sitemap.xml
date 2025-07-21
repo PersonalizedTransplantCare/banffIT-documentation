@@ -49,6 +49,9 @@
     <loc>/reference/get_banff_template.html</loc>
   </url>
   <url>
+    <loc>/reference/get_banff_version.html</loc>
+  </url>
+  <url>
     <loc>/reference/index.html</loc>
   </url>
 </urlset>
